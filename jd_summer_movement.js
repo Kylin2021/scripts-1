@@ -242,7 +242,7 @@ async function movement() {
             }
             let url = `https://api.m.jd.com/client.action?appid=jd_shop_member&functionId=bindWithVender&body=${encodeURIComponent(JSON.stringify(jiarubody))}&client=H5&clientVersion=9.2.0&uuid=88888`
             await joinjoinjoinhui(url,$.oneActivityInfo.memberUrl)
-            await $.wait(2000);
+            await $.wait(getRndInteger(2000, 4000));
           }
           await takePostRequest('olympicgames_doTaskDetail');
           if ($.callbackInfo.code === 0 && $.callbackInfo.data && $.callbackInfo.data.result && $.callbackInfo.data.result.taskToken) {
@@ -296,7 +296,7 @@ async function movement() {
           console.log(`做任务：浏览${$.oneActivityInfo.skuName};等待完成`);
           await takePostRequest('olympicgames_doTaskDetail');
           if ($.oneTask.taskType === 2) {
-            await $.wait(getRndInteger(1000, 2000));
+            await $.wait(getRndInteger(1500, 3000));
             console.log(`任务完成`);
           } else {
             console.log($.callbackInfo);
@@ -371,12 +371,12 @@ async function movement() {
             let sendInfo = encodeURIComponent(`{"dataSource":"newshortAward","method":"getTaskAward","reqParams":"{\\"taskToken\\":\\"${$.callbackInfo.data.result.taskToken}\\"}","sdkVersion":"1.0.0","clientLanguage":"zh"}`)
             await callbackResult(sendInfo)
           } else  {
-            await $.wait(2000);
+            await $.wait(getRndInteger(2000, 4000));
             console.log(`任务完成`);
           }
         }
       }
-      if(taskbool) await $.wait(1000);
+      if(taskbool) await $.wait(1500);
       let boxLotteryNum = $.shopResult.boxLotteryNum;
       for (let j = 0; j < boxLotteryNum; j++) {
         console.log(`开始第${j+1}次拆盒`)
