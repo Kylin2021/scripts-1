@@ -242,7 +242,7 @@ async function movement() {
             }
             let url = `https://api.m.jd.com/client.action?appid=jd_shop_member&functionId=bindWithVender&body=${encodeURIComponent(JSON.stringify(jiarubody))}&client=H5&clientVersion=9.2.0&uuid=88888`
             await joinjoinjoinhui(url,$.oneActivityInfo.memberUrl)
-            await $.wait(1000);
+            await $.wait(2000);
           }
           await takePostRequest('olympicgames_doTaskDetail');
           if ($.callbackInfo.code === 0 && $.callbackInfo.data && $.callbackInfo.data.result && $.callbackInfo.data.result.taskToken) {
