@@ -31,7 +31,7 @@ if ($.isNode() && process.env.summer_movement_HelpHelpHelpFlag) {
 }
 
 
-const ShHelpAuthorFlag = true;//是否助力作者SH  true 助力，false 不助力
+const ShHelpAuthorFlag = false;//是否助力作者SH  true 助力，false 不助力
 //IOS等用户直接用NobyDa的jd cookie
 let cookiesArr = [];
 $.cookie = '';
@@ -39,9 +39,7 @@ $.inviteList = [];
 $.secretpInfo = {};
 $.ShInviteList = [];
 $.innerShInviteList = [
-  'H8mphLbwLgz3e4GeFdc0g9GS9KyvaS3S',
-  'H8mphLbwLn_LHtvAULB0thOUapqKwhU',
-  'H8mphLbwLnPnJ8L9XqdUv7O1wfsqrXQ'
+  ''
 ];
 if ($.isNode()) {
   Object.keys(jdCookieNode).forEach((item) => {
@@ -924,7 +922,8 @@ function aabbiill(){
   if(new Date().getUTCHours() + 8 >= 18 && new Date().getUTCHours() + 8 < 24){
     ccdd = 1
   }else{
-    ccdd = getRndInteger(0,3)
+//    ccdd = getRndInteger(0,3)
+ccdd = 1
   }
   return ccdd == 1
 }
